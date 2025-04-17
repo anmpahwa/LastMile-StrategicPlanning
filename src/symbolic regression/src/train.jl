@@ -5,7 +5,7 @@ using DataFrames
 using MLJ
 using SymbolicRegression
 
-dir = joinpath(dirname(pwd()), "data/instances")
+dir = joinpath(pwd(), "data/instances")
 df  = CSV.read("$dir/train/data.csv", DataFrame)
 
 #  Train

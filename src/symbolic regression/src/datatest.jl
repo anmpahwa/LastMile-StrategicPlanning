@@ -8,7 +8,7 @@ using StatsBase
 function io(ins)
     println(ins)
 
-    dir = joinpath(dirname(pwd()), "data/instances/test")
+    dir = joinpath(pwd(), "data/instances/test")
     dfᵖ = CSV.read("$dir/$ins.vrp", DataFrame, silencewarnings=true)
     dfˢ = CSV.read("$dir/$ins.sol", DataFrame, header=false, silencewarnings=true, delim=" ")
 
@@ -142,6 +142,6 @@ end
 
 sets = ["set A", "set B", "set C", "set D", "set E", "set F", "set G", "set H", "set I", "set J", "set K", "set L", "set M"]
 for set ∈ sets 
-    instances = unique!(["$set/$file" for (file,type) ∈ split.(readdir(joinpath(dirname(pwd()), "data/instances/test/$set")), ".")])
+    instances = unique!(["$set/$file" for (file,type) ∈ split.(readdir(joinpath(pwd(), "data/instances/test/$set")), ".")])
     for ins ∈ instances io(ins) end
 end

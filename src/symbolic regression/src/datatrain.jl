@@ -12,7 +12,7 @@ using StatsBase
 # Fetch input-output (data) for instances with variation in customer location and demand
 # NOTE: check-point seeding ensures consistent customer location and demand values across different instances
 function io(customer_distribution, demand_distribution, seed)
-    dir = joinpath(dirname(pwd()), "data/instances/train")
+    dir = joinpath(pwd(), "data/instances/train")
     
     # Step 1.1 Define all the input parameters for the distribution environment
     rng= MersenneTwister(seed+0)
